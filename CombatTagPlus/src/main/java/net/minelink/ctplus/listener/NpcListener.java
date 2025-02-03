@@ -166,8 +166,9 @@ public final class NpcListener implements Listener {
         Player npcPlayer = npc.getEntity();
         player.setMaximumAir(npcPlayer.getMaximumAir());
         player.setRemainingAir(npcPlayer.getRemainingAir());
-        player.setHealthScale(npcPlayer.getHealthScale());
-        player.setMaxHealth(getRealMaxHealth(npcPlayer));
+        //player.setHealthScale(npcPlayer.getHealthScale());
+        //player.setMaxHealth(getRealMaxHealth(npcPlayer));
+        player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
         player.setHealth(npcPlayer.getHealth());
         player.setTotalExperience(npcPlayer.getTotalExperience());
         player.setFoodLevel(npcPlayer.getFoodLevel());
@@ -186,7 +187,9 @@ public final class NpcListener implements Listener {
      * Players can abuse this glitch repeatedly to get infinite amounts of max-health.
      * To fix this, we simply remove any health boosts granted by potions.
      */
-    @SuppressWarnings("deprecation")
+
+    /*
+        @SuppressWarnings("deprecation")
     private static double getRealMaxHealth(Player npcPlayer) {
         double health = npcPlayer.getMaxHealth();
         for (PotionEffect p : npcPlayer.getActivePotionEffects()) {
@@ -196,4 +199,5 @@ public final class NpcListener implements Listener {
         }
         return health;
     }
+    */
 }

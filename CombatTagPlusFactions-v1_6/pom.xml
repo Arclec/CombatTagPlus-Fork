@@ -20,14 +20,19 @@
             <id>techcable-repo</id>
             <url>https://repo.techcable.net/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>craftbukkit</artifactId>
-            <version>1.8.3-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
+            <groupId>net.techcable.tacospigot</groupId>
+            <artifactId>WineSpigot</artifactId>
+            <version>1.8.8-R0.2-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>D:/locallibs/WineSpigotAscend.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>net.minelink</groupId>
@@ -36,10 +41,11 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.massivecraft</groupId>
-            <artifactId>Factions</artifactId>
-            <version>1.6.9.5-U0.1.14</version>
-            <scope>provided</scope>
+            <groupId>com.massivecraft.factions</groupId>
+            <artifactId>FactionsPlugin</artifactId>
+            <version>1.6.9.5-U0.5.18-1.7.1</version>
+            <scope>system</scope>
+            <systemPath>D:/locallibs/FactionsXan.jar</systemPath>
             <exclusions>
                 <!-- Its broken -->
                 <exclusion>

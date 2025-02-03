@@ -36,16 +36,18 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.sk89q</groupId>
-            <artifactId>worldguard</artifactId>
-            <version>5.9</version>
-            <scope>provided</scope>
+            <groupId>com.sk89q.worldguard</groupId>
+            <artifactId>WorldGuardPlugin</artifactId>
+            <version>6.2</version>
+            <scope>system</scope>
+            <systemPath>D:/locallibs/worldguard-6.2.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>com.sk89q</groupId>
-            <artifactId>worldedit</artifactId>
-            <version>5.6.3</version>
-            <scope>provided</scope>
+            <groupId>com.sk89q.worldedit</groupId>
+            <artifactId>worldedit-bukkit</artifactId>
+            <version>6.19</version>
+            <scope>system</scope>
+            <systemPath>D:/locallibs/worldedit-bukkit-6.1.9.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
