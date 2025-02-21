@@ -1,6 +1,8 @@
 package net.minelink.ctplus;
 
 import net.minelink.ctplus.compat.api.NpcPlayerHelper;
+import net.minelink.ctplus.event.PlayerCombatTabEndEvent;
+import net.minelink.ctplus.event.PlayerCombatTagEndEvent;
 import net.minelink.ctplus.event.PlayerCombatTagEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -101,6 +103,8 @@ public final class TagManager {
 
     public boolean untag(UUID playerId) {
         Tag tag = tags.remove(playerId);
+        PlayerCombatTagEndEvent event = new PlayerCombatTagEndEvent(Bukkit.getPlayer(playerId));
+        Bukkit.getPluginManager().callEvent(event);
         return tag != null && !tag.isExpired();
     }
 
