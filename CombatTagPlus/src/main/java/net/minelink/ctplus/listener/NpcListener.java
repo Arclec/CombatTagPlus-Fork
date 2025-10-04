@@ -166,10 +166,12 @@ public final class NpcListener implements Listener {
         Player npcPlayer = npc.getEntity();
         player.setMaximumAir(npcPlayer.getMaximumAir());
         player.setRemainingAir(npcPlayer.getRemainingAir());
-        //player.setHealthScale(npcPlayer.getHealthScale());
-        //player.setMaxHealth(getRealMaxHealth(npcPlayer));
         player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
-        player.setHealth(npcPlayer.getHealth());
+        if(npcPlayer.getHealth() > 20) {
+            player.setHealth(20);
+        } else {
+            player.setHealth(npcPlayer.getHealth());
+        }
         player.setTotalExperience(npcPlayer.getTotalExperience());
         player.setFoodLevel(npcPlayer.getFoodLevel());
         player.setExhaustion(npcPlayer.getExhaustion());
@@ -179,25 +181,4 @@ public final class NpcListener implements Listener {
         player.getInventory().setArmorContents(npcPlayer.getInventory().getArmorContents());
         player.addPotionEffects(npcPlayer.getActivePotionEffects());
     }
-
-    /*
-     * This is to prevent players with the health boost potion effect getting increased max-health.
-     * Player.getMaxHealth() returns the player's health including temporary boosts from potions.
-     * If we apply this to the new player with Player.setMaxHealth(), the previously temporary boost becomes permanent.
-     * Players can abuse this glitch repeatedly to get infinite amounts of max-health.
-     * To fix this, we simply remove any health boosts granted by potions.
-     */
-
-    /*
-        @SuppressWarnings("deprecation")
-    private static double getRealMaxHealth(Player npcPlayer) {
-        double health = npcPlayer.getMaxHealth();
-        for (PotionEffect p : npcPlayer.getActivePotionEffects()) {
-            if (p.getType().equals(PotionEffectType.HEALTH_BOOST)) {
-                health -= (p.getAmplifier() + 1) * 4;
-            }
-        }
-        return health;
-    }
-    */
 }

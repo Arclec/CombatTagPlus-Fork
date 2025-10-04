@@ -11,6 +11,7 @@ import net.minelink.ctplus.compat.api.NpcNameGeneratorFactory;
 import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.BlockBreakEvent;
 
 import java.util.Map;
 import java.util.UUID;
